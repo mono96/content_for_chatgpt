@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Content for ChatGPT
- * Plugin URI: 
+ * Plugin URI: https://github.com/mono96/content_for_chatgpt
  * Description: You can copy the text of a question for a proposed title and description to Chat-GPD with one click from the article editing screen. API Key is not required.
  * Version: 1.0
  * Author: Nobuhito Ohigashi
