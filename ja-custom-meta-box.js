@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const copyButton = document.getElementById('ATB_copy_button');
-    const noRadio = document.getElementById('ATB_no_radio');
-    const titleRadio = document.getElementById('ATB_title_radio');
-    const summaryRadio = document.getElementById('ATB_summary_radio');
-    const postContentText = document.getElementById('ATB_post_content_text').textContent;
+    const copyButton = document.getElementById('CFCG_copy_button');
+    const noRadio = document.getElementById('CFCG_no_radio');
+    const titleRadio = document.getElementById('CFCG_title_radio');
+    const summaryRadio = document.getElementById('CFCG_summary_radio');
+    const postContentText = document.getElementById('CFCG_post_content_text').textContent;
     
     function resetButton() {
         copyButton.textContent = 'Copy';
