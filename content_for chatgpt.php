@@ -48,6 +48,7 @@ function ATB_custom_meta_box_callback( $post ) {
     echo '<label for="ATB_summary_radio">要約</label>';
 
     echo '<div id="ATB_post_content_text">' . esc_html( $post_content_text ) . '</div>';
+    echo '<div id="ATB_after_post_content_text">' . '<p>下書き保存が必要です。文章が、変更されない&表示されないときは、ブラウザーで再読み込みしてください。' . '</div>';
 }
 
 function ATB_custom_meta_box_scripts() {
