@@ -52,7 +52,7 @@ function ATB_custom_meta_box_callback( $post ) {
 
 function ATB_custom_meta_box_scripts() {
     wp_enqueue_style( 'ATB_custom-meta-box-styles', plugin_dir_url( __FILE__ ) . 'custom-meta-box.css' );
-    wp_enqueue_script( 'ATB_custom-meta-box-scripts', plugin_dir_url( __FILE__ ) . 'ja-custom-meta-box.js', array( 'jquery' ), false, true );
+    wp_enqueue_script( 'ATB_custom-meta-box-scripts', plugin_dir_url( __FILE__ ) . 'ja-custom-meta-box.js', array( 'jquery' ),  '1.0.1', true );
 }
 add_action( 'admin_enqueue_scripts', 'ATB_custom_meta_box_scripts' );
 
