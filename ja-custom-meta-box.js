@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (summaryRadio.checked) {
-            content = '#命令書:\nあなたはプロの編集者です。以下の文章をより注目や興味を集めやすく、とても魅力的で、SNSで誰もが無視できない強い印象で、絵文字を使わずに、重要なキーワードを取り残さず、SEOを考慮した、ディスクリプションタグに使える要約した100文字の文章を3つ提案してください。\n\n #入力文: \n' + content.substring(0, 2300) + '\n\n#出力文:';
+            content = '#命令書:\nあなたはプロの編集者です。以下の文章をより注目や興味を集めやすく、とても魅力的で、SNSで誰もが無視できない強い印象で、絵文字を使わずに、重要なキーワードを取り残さず、SEOを考慮した、ディスクリプションタグに使える要約した100文字の文章を2つ提案してください。\n\n #入力文: \n' + content.substring(0, 2300) + '\n\n#出力文:';
         }
 
         textArea.value = content;
