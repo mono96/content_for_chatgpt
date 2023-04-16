@@ -8,5 +8,6 @@ For now, only Japanese is supported.
 # 使い方
 
 動画を見てください
-↓
+
+
 https://vimeo.com/818042153/3c3e8e4c3b
