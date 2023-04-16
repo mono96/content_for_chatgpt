@@ -11,6 +11,44 @@
   * License: GPL2
  */
 
+// ATB_article_text_box_plugin チェック
+// アクションフックを追加
+register_activation_hook(__FILE__, 'CFCG_your_plugin_activation');
+
+function CFCG_your_plugin_activation() {
+    // プラグインが有効化されたときに、トランジェントを設定
+    set_transient('CFCG_your_plugin_welcome_message', true, 5);
+}
+
+// 管理画面にエラーメッセージを表示
+add_action('admin_notices', 'CFCG_your_plugin_display_welcome_message');
+
+function CFCG_your_plugin_display_welcome_message() {
+    // トランジェントを取得
+    if (get_transient('CFCG_your_plugin_welcome_message')) {
+        // メッセージを表示
+        
+    // ATB_article_text_boxプラグインのパス
+    $atb_plugin_path = 'ATB_article_text_box.php/ATB_article_text_box.php';
+    if (is_plugin_active($atb_plugin_path) || file_exists(WP_PLUGIN_DIR . '/' . $atb_plugin_path)) {
+        
+        // プラグインを有効化しました を消す
+        unset($_GET['activate']);
+        // 管理画面にメッセージを表示
+
+            ?>
+            <div class="notice notice-error">
+                <p><?php _e('<strong>エラー：</strong> ATB_article_text_boxプラグインがインストールされています。このプラグインと競合する可能性があるため、ATB_article_text_boxプラグインを無効化および削除してから、再度このプラグインを有効化してください。削除が完了しないと、プラグインを有効化できません。', 'your-plugin-textdomain'); ?></p>
+            </div>
+            <?php
+            // 現在のプラグインを無効化
+            deactivate_plugins(plugin_basename(__FILE__));
+        }
+        // トランジェントを削除
+        delete_transient('CFCG_your_plugin_welcome_message');
+    }
+}
+
 // Add a custom meta box to the post editor screen
 function CFCG_custom_meta_box() {
     add_meta_box(
@@ -49,6 +87,8 @@ function CFCG_custom_meta_box_callback( $post ) {
 
     echo '<div id="CFCG_post_content_text">' . esc_html( $post_content_text ) . '</div>';
     echo '<div id="CFCG_after_post_content_text">' . '<p>下書き保存が必要です。文章が、変更されない&表示されないときは、ブラウザーで再読み込みしてください。' . '</div>';
+    
+    //echo '<p>'.  plugins_url() . '/ATB_article_text_box.php/ATB_article_text_box.php</p>';
 }
 
 function CFCG_custom_meta_box_scripts() {
@@ -56,6 +96,3 @@ function CFCG_custom_meta_box_scripts() {
     wp_enqueue_script( 'CFCG_custom-meta-box-scripts', plugin_dir_url( __FILE__ ) . 'ja-custom-meta-box.js', array( 'jquery' ),  '1.0.2', true );
 }
 add_action( 'admin_enqueue_scripts', 'CFCG_custom_meta_box_scripts' );
-
-
-
