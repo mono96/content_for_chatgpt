@@ -92,7 +92,7 @@ function CFCG_custom_meta_box_callback( $post ) {
 }
 
 function CFCG_custom_meta_box_scripts() {
-    wp_enqueue_style( 'CFCG_custom-meta-box-styles', plugin_dir_url( __FILE__ ) . 'custom-meta-box.css' ,'1.0.1');
+    wp_enqueue_style( 'CFCG_custom-meta-box-styles', plugin_dir_url( __FILE__ ) . 'custom-meta-box.css');
     wp_enqueue_script( 'CFCG_custom-meta-box-scripts', plugin_dir_url( __FILE__ ) . 'ja-custom-meta-box.js', array( 'jquery' ),  '1.0.2', true );
 }
 add_action( 'admin_enqueue_scripts', 'CFCG_custom_meta_box_scripts' );
